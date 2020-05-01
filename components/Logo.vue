@@ -16,17 +16,16 @@
   </div>
 </template>
 <script>
+import { mapMutations } from 'vuex'
 export default {
   computed: {
     name() {
-      return this.$store.state.sellerForm1Register.name;
+      return this.$store.state.seller.name;
     }
   },
   methods: {
     updateName(e) {
-      this.$store.commit("sellerForm1Register", {
-        name: e.target.value
-      });
+      this.$store.commit("seller/setName", e.target.value);
     }
   }
 };
